@@ -1,4 +1,6 @@
 class Api::V1::MoviesController < ApplicationController
+  before_action :require_login
+
   def index
     render json: Movie.all
   end
